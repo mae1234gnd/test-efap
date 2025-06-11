@@ -1,19 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox</title>
+  <title>Wedding Planner - Votre Jour Parfait</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="navbar">
-    <img src="images/logo.png" class="logo">
-    <div class="links">
-      <a href="" class="link">Présentation</a>
-      <a href="" class="link">Team</a>
-      <a href="" class="link">Contact</a>
+<body style="font-family: 'Rajdhani', sans-serif; margin: 0;">
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="navbar">
+      <div class="logo"><h2>LOGO</h2></div>
+      <div class="menu">
+        <a href="#about">À propos</a>
+        <a href="#blog">Blog</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="links">
+        <a href="#contact" class="btn-red">Entretien gratuit</a>
+      </div>
     </div>
   </div>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/photo-section.jpg" alt="À propos" />
+      </div>
+      <div class="about-text">
+        <h2>À propos de nous</h2>
+        <p>
+          Nous croyons en un design élégant, une stratégie efficace et une communication claire.
+          Notre équipe vous accompagne dans la création de votre identité de marque et votre développement digital.
+        </p>
+        <a href="#" class="btn-red">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2>Nos Services</h2>
+      <p>Des solutions créatives et sur-mesure pour votre marque.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Identité visuelle</h3>
+        <p>Création de logos, palettes de couleurs et typographies uniques.</p>
+      </div>
+      <div class="service-card">
+        <h3>Stratégie digitale</h3>
+        <p>Accompagnement pour votre présence en ligne : réseaux sociaux, newsletters, SEO.</p>
+      </div>
+      <div class="service-card">
+        <h3>Site Web</h3>
+        <p>Design moderne, responsive et optimisé pour raconter votre histoire.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <h2>Témoignages</h2>
+      <p>Ce que nos clients disent de nous</p>
+    </div>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>“Une équipe talentueuse, à l'écoute, qui a su donner vie à ma vision. Je recommande à 100% !”</p>
+        <span>— Julie, fondatrice de Bloom Studio</span>
+      </div>
+      <div class="testimonial">
+        <p>“Un accompagnement exceptionnel du début à la fin, avec une vraie valeur ajoutée sur notre stratégie.”</p>
+        <span>— Marc, CEO de NovaTech</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="section-header">
+      <h2>Nos Réalisations</h2>
+      <nav class="projects-links">
+        <a href="#projet1" class="project-link">Projet 1</a>
+        <a href="#projet2" class="project-link">Projet 2</a>
+        <a href="#projet3" class="project-link">Projet 3</a>
+        <a href="#projet4" class="project-link">Projet 4</a>
+      </nav>
+      <div class="gallery-grid">
+        <a href="https://i.pinimg.com/474x/2a/6c/c2/2a6cc2d2f7bff0b2a58446b246488853.jpg" class="gallery-item">
+          <img src="https://i.pinimg.com/474x/2a/6c/c2/2a6cc2d2f7bff0b2a58446b246488853.jpg" alt="Mariage naturel">
+        </a>
+        <a href="https://nicolasterraes.com/wp-content/uploads/2025/03/photos-de-couple-mariage-mas-de-la-rose-2.jpg" class="gallery-item">
+          <img src="https://nicolasterraes.com/wp-content/uploads/2025/03/photos-de-couple-mariage-mas-de-la-rose-2.jpg" alt="Couple mariage">
+        </a>
+        <a href="https://www.linoludovic.fr/wp-content/uploads/2023/11/Pose-etreinte-682x1024.jpg" class="gallery-item">
+          <img src="https://www.linoludovic.fr/wp-content/uploads/2023/11/Pose-etreinte-682x1024.jpg" alt="Étreinte mariage">
+        </a>
+        <a href="https://i.pinimg.com/originals/3b/e0/f2/3be0f2298213a35ef28ea0f06f9e84f3.jpg" class="gallery-item">
+          <img src="https://i.pinimg.com/originals/3b/e0/f2/3be0f2298213a35ef28ea0f06f9e84f3.jpg" alt="Mariage romantique">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Script -->
+  <script>
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = `<img src="${item.href}" alt="">`;
+        overlay.addEventListener('click', () => overlay.remove());
+        document.body.appendChild(overlay);
+      });
+    });
+  </script>
+
+  <!-- Presentation Section -->
+  <section id="presentation-wedding-planner" style="background:#FAF5F0; padding: 60px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+      <div style="flex: 1 1 300px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM5Yuv1hJ3YC0n7FD4IT7unNdtBSaQvCpiA&s" alt="Wedding Planner" style="width: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+      </div>
+      <div style="flex: 1 1 400px; color: #4A4A4A;">
+        <h2 style="color: #D2716A; font-size: 2.5rem; margin-bottom: 20px;">Présentation de votre Wedding Planner</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+          Passionnée par la création de moments uniques et magiques, votre wedding planner accompagne chaque couple pour imaginer et organiser le jour parfait.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+          Forte d’une expérience riche et variée, elle vous guide pas à pas, du choix des prestataires à la coordination le jour J, pour que vous puissiez profiter pleinement de votre mariage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <form action="#" method="post">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Votre Wedding Planner - Tous droits réservés
+  </footer>
+
 </body>
 </html>
